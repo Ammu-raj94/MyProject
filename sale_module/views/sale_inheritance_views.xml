@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="view_order_form_inherit" model="ir.ui.view">
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="after">
+                <field name="package_id" widget="many2many_tags"/>
+            </field>
+            <xpath expr="//page[@name='other_information']" position="after">
+                <page string="Package info">
+                    <group>
+                        <field name="pack_info"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+    <record id="view_order_tree_inherit" model="ir.ui.view">
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_tree"/>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="after">
+                <field name="package_id" widget="many2many_tags"/>
+            </field>
+        </field>
+    </record>
+
+
+<!--    sale order line inherit-->
+     <record id="view_order_form_line" model="ir.ui.view">
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+                <xpath expr="/form/sheet/notebook/page/field[@name='order_line']/tree/field[@name='product_id']" position="after">
+                        <field name="package_id"/>
+        </xpath>
+    </field>
+</record>
+</odoo>

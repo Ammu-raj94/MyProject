@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="sale_package_views_form" model="ir.ui.view">
+        <field name="name">sale.package.form</field>
+        <field name="model">sale.package</field>
+        <field name="arch" type="xml">
+    <form string="Test">
+    <sheet>
+        <group>
+            <field name="Name"/>
+            <field name="Width"/>
+             <field name="Height"/>
+            <field name="Length"/>
+            <field name="Maximum_weight"/>
+        </group>
+    </sheet>
+    </form>
+        </field>
+     </record>
+    <record id="sale_package_view_tree" model="ir.ui.view">
+        <field name="name">sale.package.tree</field>
+        <field name="model">sale.package</field>
+        <field name="arch" type="xml">
+            <tree string="Test">
+                <field name="Name"/>
+                <field name="Width"/>
+                <field name="Height"/>
+                <field name="Length"/>
+                <field name="Maximum_weight"/>
+            </tree>
+        </field>
+     </record>
+    <record id="sale_package_action" model="ir.actions.act_window">
+    <field name="name">sale package</field>
+    <field name="res_model">sale.package</field>
+    <field name="view_mode">tree,form</field>
+</record>
+</odoo>

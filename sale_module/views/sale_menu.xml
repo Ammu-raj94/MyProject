@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<odoo>
+ <menuitem id="sale_module_menu_root"
+           name="sale_module"
+           action="sale_package_action"
+           parent="stock.menu_warehouse_config"/>
+</odoo>
+
+
